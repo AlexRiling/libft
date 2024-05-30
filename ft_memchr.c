@@ -6,15 +6,15 @@
 /*   By: ariling <ariling@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 15:11:04 by ariling           #+#    #+#             */
-/*   Updated: 2024/05/30 15:20:09 by ariling          ###   ########.fr       */
+/*   Updated: 2024/05/30 21:51:38 by ariling          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	const unsigned char *ptr;
+	const unsigned char	*ptr;
 
 	ptr = (const unsigned char *)s;
 	while (n--)

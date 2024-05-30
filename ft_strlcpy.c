@@ -6,11 +6,11 @@
 /*   By: ariling <ariling@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 15:34:06 by ariling           #+#    #+#             */
-/*   Updated: 2024/05/30 15:34:09 by ariling          ###   ########.fr       */
+/*   Updated: 2024/05/30 20:33:15 by ariling          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {

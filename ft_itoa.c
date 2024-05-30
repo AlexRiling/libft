@@ -1,37 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ariling <ariling@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/30 20:32:57 by ariling           #+#    #+#             */
-/*   Updated: 2024/05/30 21:48:20 by ariling          ###   ########.fr       */
+/*   Created: 2024/05/30 23:05:30 by ariling           #+#    #+#             */
+/*   Updated: 2024/05/30 23:22:09 by ariling          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
+static size_t	get_num_len(int n)
 {
-	unsigned char		*d;
-	const unsigned char	*s;
+	size_t	len;
 
-	d = (unsigned char *)dest;
-	s = (const unsigned char *)src;
-	if (!dest && !src)
-		return (NULL);
-	if (d < s)
+	len = 1;
+	if (n < 0)
+		len++;
+	while (n / 10)
 	{
-		while (len--)
-			*d++ = *s++;
+		len++;
+		n /= 10;
+	}
+	return (len);
+}
+
+char	*ft_itoa(int n)
+{
+	char			*str;
+	size_t			len;
+	unsigned int	num;
+
+	len = get_num_len(n);
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
+	str[len] = '\0';
+	if (n < 0)
+	{
+		str[0] = '-';
+		num = -n;
 	}
 	else
+		num = n;
+	while (len-- && str[len] != '-')
 	{
-		d += len;
-		s += len;
-		while (len--)
-			*--d = *--s;
+		str[len] = num % 10 + '0';
+		num /= 10;
 	}
-	return (dest);
+	return (str);
 }

@@ -6,12 +6,11 @@
 /*   By: ariling <ariling@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 16:23:40 by ariling           #+#    #+#             */
-/*   Updated: 2024/05/27 17:02:13 by ariling          ###   ########.fr       */
+/*   Updated: 2024/05/30 21:51:51 by ariling          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_isprint(int c)
 {

@@ -6,9 +6,11 @@
 /*   By: ariling <ariling@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 16:14:32 by ariling           #+#    #+#             */
-/*   Updated: 2024/05/30 16:14:34 by ariling          ###   ########.fr       */
+/*   Updated: 2024/05/30 20:33:59 by ariling          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {

@@ -6,18 +6,22 @@
 /*   By: ariling <ariling@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 23:20:08 by ariling           #+#    #+#             */
-/*   Updated: 2024/05/30 14:00:56 by ariling          ###   ########.fr       */
+/*   Updated: 2024/05/30 21:47:46 by ariling          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-    unsigned char *ptr;
-    
-	ptr = s;
-    while (n--) {
-        *ptr++ = 0;
-    }
+	size_t			i;
+	unsigned char	*ptr;
+
+	ptr = (unsigned char *)s;
+	i = 0;
+	while (i < n)
+	{
+		ptr[i] = 0;
+		i++;
+	}
 }

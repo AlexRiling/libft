@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ariling <ariling@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/30 20:33:06 by ariling           #+#    #+#             */
-/*   Updated: 2024/05/30 20:33:07 by ariling          ###   ########.fr       */
+/*   Created: 2024/05/30 23:06:08 by ariling           #+#    #+#             */
+/*   Updated: 2024/05/30 23:21:37 by ariling          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	while (*s)
+	char	*new_str;
+	size_t	len;
+	size_t	i;
+
+	if (!s || !f)
+		return (NULL);
+	len = ft_strlen(s);
+	new_str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!new_str)
+		return (NULL);
+	i = 0;
+	while (i < len)
 	{
-		if (*s == (char)c)
-			return ((char *)s);
-		s++;
+		new_str[i] = f(i, s[i]);
+		i++;
 	}
-	if ((char)c == '\0')
-		return ((char *)s);
-	return (NULL);
+	new_str[i] = '\0';
+	return (new_str);
 }

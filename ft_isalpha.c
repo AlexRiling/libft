@@ -6,11 +6,11 @@
 /*   By: ariling <ariling@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 16:56:59 by ariling           #+#    #+#             */
-/*   Updated: 2024/05/27 17:01:09 by ariling          ###   ########.fr       */
+/*   Updated: 2024/05/30 21:48:04 by ariling          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_isalpha(int c)
 {
