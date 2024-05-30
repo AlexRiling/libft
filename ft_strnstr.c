@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ariling <ariling@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/29 23:20:08 by ariling           #+#    #+#             */
-/*   Updated: 2024/05/30 14:00:56 by ariling          ###   ########.fr       */
+/*   Created: 2024/05/30 19:34:37 by ariling           #+#    #+#             */
+/*   Updated: 2024/05/30 19:34:38 by ariling          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void ft_bzero(void *s, size_t n)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-    unsigned char *ptr;
-    
-	ptr = s;
-    while (n--) {
-        *ptr++ = 0;
-    }
+	size_t i;
+	size_t j;
+
+	if (*needle == '\0')
+		return ((char *)haystack);
+	i = 0;
+	while (haystack[i] && i < len)
+	{
+		j = 0;
+		while (needle[j] && haystack[i + j] && (i + j) < len && haystack[i + j] == needle[j])
+			j++;
+		if (needle[j] == '\0')
+			return ((char *)(haystack + i));
+		i++;
+	}
+	return (NULL);
 }

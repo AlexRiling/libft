@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ariling <ariling@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/29 23:20:08 by ariling           #+#    #+#             */
-/*   Updated: 2024/05/30 14:00:56 by ariling          ###   ########.fr       */
+/*   Created: 2024/05/30 16:39:30 by ariling           #+#    #+#             */
+/*   Updated: 2024/05/30 16:39:33 by ariling          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void ft_bzero(void *s, size_t n)
+int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-    unsigned char *ptr;
-    
-	ptr = s;
-    while (n--) {
-        *ptr++ = 0;
+    while (n--)
+    {
+        if (*s1 != *s2 || !*s1 || !*s2)
+            return (*(unsigned char *)s1 - *(unsigned char *)s2);
+        s1++;
+        s2++;
     }
+    return (0);
 }

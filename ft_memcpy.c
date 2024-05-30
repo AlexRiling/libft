@@ -6,19 +6,23 @@
 /*   By: ariling <ariling@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 23:46:42 by ariling           #+#    #+#             */
-/*   Updated: 2024/05/29 23:52:21 by ariling          ###   ########.fr       */
+/*   Updated: 2024/05/30 13:37:03 by ariling          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void	*dest, void const *src, size_t n)
-{
-	void	*dest_ptr;
+#include <stddef.h>
 
-	dest_ptr = dest;
+void	*ft_memcpy(void *dest, const void *src, size_t n)
+{
+	unsigned char		*d;
+	const unsigned char	*s;
+
 	if (!dest && !src)
-		return (dest);
+		return (NULL);
+	d = (unsigned char *)dest;
+	s = (const unsigned char *)src;
 	while (n--)
-		*(char *)dest++ = *(char *)src++;
-	return (dest_ptr);
+		*d++ = *s++;
+	return (dest);
 }
 

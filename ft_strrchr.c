@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ariling <ariling@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/29 23:20:08 by ariling           #+#    #+#             */
-/*   Updated: 2024/05/30 14:00:56 by ariling          ###   ########.fr       */
+/*   Created: 2024/05/30 16:14:32 by ariling           #+#    #+#             */
+/*   Updated: 2024/05/30 16:14:34 by ariling          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-void ft_bzero(void *s, size_t n)
+char	*ft_strrchr(const char *s, int c)
 {
-    unsigned char *ptr;
-    
-	ptr = s;
-    while (n--) {
-        *ptr++ = 0;
-    }
+	char	*last_occurrence;
+
+	last_occurrence = NULL;
+	while (*s)
+	{
+		if (*s == (char)c)
+			last_occurrence = (char *)s;
+		s++;
+	}
+	if ((char)c == '\0')
+		return ((char *)s);
+	return (last_occurrence);
 }
