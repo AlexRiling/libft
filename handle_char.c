@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   handle_char.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ariling <ariling@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/30 23:07:12 by ariling           #+#    #+#             */
-/*   Updated: 2024/06/29 09:52:04 by ariling          ###   ########.fr       */
+/*   Created: 2024/06/29 18:38:45 by ariling           #+#    #+#             */
+/*   Updated: 2024/06/29 18:38:57 by ariling          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_putchar_fd(char c, int fd)
+static int	handle_char(va_list args)
 {
-	write(fd, &c, 1);
-	return (1);
+	char	c;
+
+	c = (char)va_arg(args, int);
+	return (write(1, &c, 1));
 }

@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   handle_percent.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ariling <ariling@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/30 23:07:12 by ariling           #+#    #+#             */
-/*   Updated: 2024/06/29 09:52:04 by ariling          ###   ########.fr       */
+/*   Created: 2024/06/29 18:39:20 by ariling           #+#    #+#             */
+/*   Updated: 2024/06/29 18:39:27 by ariling          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_putchar_fd(char c, int fd)
+static int	handle_percent(void)
 {
-	write(fd, &c, 1);
-	return (1);
+	return (write(1, "%", 1));
 }

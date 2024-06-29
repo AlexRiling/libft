@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   handle_hex.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ariling <ariling@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/30 23:07:12 by ariling           #+#    #+#             */
-/*   Updated: 2024/06/29 09:52:04 by ariling          ###   ########.fr       */
+/*   Created: 2024/06/29 18:38:32 by ariling           #+#    #+#             */
+/*   Updated: 2024/06/29 18:38:36 by ariling          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_putchar_fd(char c, int fd)
+static int	handle_hex(va_list args, char format)
 {
-	write(fd, &c, 1);
-	return (1);
+	unsigned int	n;
+	char			*str;
+	int				len;
+
+	n = va_arg(args, unsigned int);
+	if (format == 'x')
+		str = ft_itoa_base(n, "0123456789abcdef");
+	else
+		str = ft_itoa_base(n, "0123456789ABCDEF");
+	len = write(1, str, ft_strlen(str));
+	free(str);
+	return (len);
 }

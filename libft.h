@@ -6,13 +6,14 @@
 /*   By: ariling <ariling@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 21:49:56 by ariling           #+#    #+#             */
-/*   Updated: 2024/05/30 23:11:03 by ariling          ###   ########.fr       */
+/*   Updated: 2024/06/29 18:41:43 by ariling          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <stdarg.h>
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -60,9 +61,23 @@ char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
-void	ft_putchar_fd(char c, int fd);
+int		ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
+// Printf
+int		ft_printf(const char *format, ...);
+char	*ft_itoa(int n);
+char	*ft_itoa_unsigned(unsigned int n);
+char	*ft_itoa_base(unsigned int value, const char *base);
+char	*ft_itoa_ptr(unsigned long ptr);
+int		handle_percent(void);
+int		handle_char(va_list args);
+int		handle_int(va_list args);
+int		handle_hex(va_list args, char format);
+int		handle_pointer(va_list args);
+int		handle_string(va_list args);
+int		handle_unsigned(va_list args);
 
 #endif
