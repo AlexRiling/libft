@@ -6,13 +6,13 @@
 /*   By: ariling <ariling@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 18:38:06 by ariling           #+#    #+#             */
-/*   Updated: 2024/06/29 18:38:12 by ariling          ###   ########.fr       */
+/*   Updated: 2024/09/06 12:27:09 by ariling          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	handle_unsigned(va_list args)
+int	handle_unsigned(va_list args)
 {
 	unsigned int	n;
 	char			*str;

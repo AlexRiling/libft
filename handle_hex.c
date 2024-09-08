@@ -6,13 +6,13 @@
 /*   By: ariling <ariling@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 18:38:32 by ariling           #+#    #+#             */
-/*   Updated: 2024/06/29 18:38:36 by ariling          ###   ########.fr       */
+/*   Updated: 2024/09/06 12:27:19 by ariling          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	handle_hex(va_list args, char format)
+ int	handle_hex(va_list args, char format)
 {
 	unsigned int	n;
 	char			*str;

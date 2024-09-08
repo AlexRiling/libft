@@ -6,13 +6,13 @@
 /*   By: ariling <ariling@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 18:38:24 by ariling           #+#    #+#             */
-/*   Updated: 2024/06/29 18:38:29 by ariling          ###   ########.fr       */
+/*   Updated: 2024/09/06 12:27:21 by ariling          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	handle_pointer(va_list args)
+ int	handle_pointer(va_list args)
 {
 	void	*ptr;
 	char	*str;
